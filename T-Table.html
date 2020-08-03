@@ -20,7 +20,6 @@
 					<a class="btndropdown" href="Z-Scores.html">Z-Scores</a>
 					<a class="btndropdown" href="Confidence_Interval.html">Confidence Interval</a>
 					<a class="btndropdown" href="Permutation.html">Permutation And Combination</a>
-					<a class="btndropdown" href="T-Table.html">T-Table Scores</a>
 					<a class="btndropdown" href="Chi-Square.html">Chi-Square</a>
 					<a class="btndropdown" href="LinearRegression.html">Linear Regression</a>
 					<a class="btndropdown" href="ProbabilityCalculator.html">Probability</a>
@@ -34,54 +33,63 @@
 	<main>
 		
 		<section>
-			<h1>Probability</h1>
+			<h1>T-Table Scores</h1>
 			<fieldset>
-			<Legend>Probability of Two Events</legend>
-			<label>Probability of A: P(A) <input id="ProbA" type="number" name="PA"></label></br>
-			<label>Probability of B: P(B) <input id="ProbB" type="number" name="PB"></label></br>
-			<em> Please input values between 0 and 1.</em>	
+			<Legend>Get T-Distribution Value</legend>
+			<label>Probability:</label>
+			<select id="prob" class="half">
+				<option value="99.95%">99.95%</option>
+				<option value="99.9%">99.9%</option>
+				<option value="99.5%">99.5%</option>
+				<option value="99%">99%</option>
+				<option value="97.5%">97.5%</option>
+				<option value="95%" selected="True">95%</option>
+				<option value="90%">90%</option>
+				<option value="85%">85%</option>
+			</select></br>
+			<label>Degree of Freedom: <input id="dg" type="number" name="dg" min="1" max="30" class="half" ></label>
 		</br>
-			<button onclick="Prob1()">Get Values</button>
+			<em>Make use of the Table below to determine appropriate one or two tail percentage</em></br>
+			<button onclick="field8()">Get Values</button>
 			</fieldset>
-			
 			<p id="answer"> </p>
 		</section>
 		
 		<section>
 			<fieldset>
-			<Legend>
-				Probability Solver for Two Events
-			</legend>
-			<label>Probability of A: <input id="PbA" type="number" name="PbA"></label></br>
-		<label>	Probability of B: <input id="PbB" type="number" name="PbB"></label></br>
-		<label>Probability of A NOT occuring: <input id="PnA" type="number" name="PnA"></label></br>
-		<label>Probability of B NOT occuring:: <input id="PnB" type="number" name="PnB"></label></br>
-		<label>Probability of A and B both occuring: <input id="PAB" type="number" name="PAB"></label></br>
-		<label>Probability that A or B or both occur: <input id="PABb" type="number" name="PABb"></label></br>
-		<label>Probability that A or B occurs but NOT both: <input id="PABnB" type="number" name="PABnB"></label>	</br>
-		<label>Probability of neither A nor B occuring: <input id="PnAB" type="number" name="PnAB"></label></br>
-			
-			<button onclick="Prob2()">Get Values</button>
+			<Legend>Get T-Distribution Function Percentage</legend>
+			<label>x-value: <input id="xvalue"type="number" name="xvalue"></label><em>write values in 3 decimal place</em></br>
+			<label>Degrees of freedom: <input id="df" type="number" name="df" min="1" max="30"></label>
+		</br>
+			<button onclick="field9()">Get Values</button>
 			</fieldset>
 			<p id="answer2"> </p>
 		</section>
 
 		<section>
 			<fieldset>
-			<Legend>
-				Probability of a series of event
-			</legend>
-			<h3>Event A</h3><label>
-				Probability :  <input id="Ea"type="number" name="Ea" class="half">Repeat Times: <input type="number" id="rta"name="rta" value=1 class="half">
-			</label></br>
-			<h3>Event B</h3><label>
-				Probability : <input id="Eb"type="number" name="Eb" class="half"> Repeat Times: <input type="number" id="rtb"name="rtb" value=1 class="half">
-			</label></br>
-			<button onclick="Prob3()">Get Values</button>
+			<Legend>Get T-Distribution Function Percentage without Degree of freedom</legend>
+			<label>x-value: <input id="xvalue1"type="number" name="xvalue"></label><em>write values in 3 decimal place</em></br>
+			<button onclick="field10()">Get Values</button>
 			</fieldset>
-			
 			<p id="answer3"> </p>
 		</section>
+		
+		<section>
+			<table>
+				<tr><th>one-tail</th><th>two-tail</th><th>Percentage</th></tr>
+				<tr><td>0.10</td><td>0.20</td><td>90%</td></tr>
+				<tr><td>0.05</td><td>0.10</td><td>95%</td></tr>
+				<tr><td>0.025</td><td>0.05</td><td>97.5%</td></tr>
+				<tr><td>0.01</td><td>0.02</td><td>99%</td></tr>
+				<tr><td>0.005</td><td>0.01</td><td>99.5%</td></tr>
+				<tr><td>0.001</td><td>0.002</td><td>99.9%</td></tr>
+				<tr><td>0.0005</td><td>0.001</td><td>99.95%</td></tr>
+			</table>
+		</section>
+
+	
+
 	</main>
 	<footer>
 		<div>Thank you for visiting and making use of this site. Please donate to paypal:iniobongobot@gmail.com to support.</div>

@@ -13,8 +13,8 @@ function Extra(){
 			"<p id="+"'answer'"+"></p>";
 	}
 	else if (Extra == 'Guess'){
-		var output= "<fieldset><legend>Guess A Number betwwen 1 and 5</legend>"+
-				"<label>Guess<input id='Guess' type='number' min='1' max='5'></label>"+
+		var output= "<fieldset><legend>Guess A Number between 1 and 5</legend>"+
+				"<label>I have a number in mind, See if you can Guess it</br><input id='Guess' type='number' min='1' max='5'></label>"+
 				"</br>"+"<button onclick="+'GuessGame()'+">Let's Play</button>"+
 			"</fieldset></br>"+
 			"<p id="+"'answer'"+"></p>";

@@ -1,157 +1,12 @@
 //MATHSHELP1.HTML STARTS HERE
-function getMean(){
-	var one = document.getElementById('mean').value;
-	var two = one.split(',');
-	var three=0;
-	for (var i = 0; i < two.length; i++) {
-		three=parseFloat(two[i])+three;
-	}
-	var four = three/two.length;
-	return four.toFixed(4)
-}
-
-function getPOPStdev(){
-	var one = document.getElementById('mean').value;
-	var two = one.split(',');
-	var three=0;
-	for (var i = 0; i < two.length; i++) {
-		three=parseFloat(two[i])+three;
-	}
-	var four = three/two.length;
-	var five=0;
-	for (var i = 0; i < two.length; i++) {
-		five=((parseFloat(two[i])-four)**2)+five;
-	}
-	var six = five/two.length;
-	var seven = Math.sqrt(six);
-	return seven.toFixed(4);
-}
-
-function getSAMPStdev(){
-	var one = document.getElementById('mean').value;
-	var two = one.split(',');
-	var three=0;
-	for (var i = 0; i < two.length; i++) {
-		three=parseFloat(two[i])+three;
-	}
-	var four = three/two.length;
-	var five=0;
-	for (var i = 0; i < two.length; i++) {
-		five=((parseFloat(two[i])-four)**2)+five;
-	}
-	var six = five/(two.length-1);
-	var seven = Math.sqrt(six);
-	return seven.toFixed(4);
-}
-
-
-function getPOPVar(){
-	var one = document.getElementById('mean').value;
-	var two = one.split(',');
-	var three=0;
-	for (var i = 0; i < two.length; i++) {
-		three=parseFloat(two[i])+three;
-	}
-	var four = three/two.length;
-	var five=0;
-	for (var i = 0; i < two.length; i++) {
-		five=((parseFloat(two[i])-four)**2)+five;
-	}
-	var six = five/two.length;
-	return six.toFixed(4);
-}
-
-function getSAMPVar(){
-	var one = document.getElementById('mean').value;
-	var two = one.split(',');
-	var three=0;
-	for (var i = 0; i < two.length; i++) {
-		three=parseFloat(two[i])+three;
-	}
-	var four = three/two.length;
-	var five=0;
-	for (var i = 0; i < two.length; i++) {
-		five=((parseFloat(two[i])-four)**2)+five;
-	}
-	var six = five/(two.length-1);
-	return six.toFixed(4);
-}
-
-function getRange(){
-	var one = document.getElementById('mean').value;
-	var two = one.split(',');
-	var arr=[];
-	for (var i = 0; i < two.length; i++) {
-		var x=parseFloat(two[i]);
-		arr.push(x);
-		console.log(typeof(x));
-	}
-	arr.sort(function (a, b) {  return a - b;  });
-	console.log(arr);
-	var four= arr[0];
-	var five= arr[arr.length-1];
-	var six=(five-four);
-	var eight=arr.length;
-	if (arr.length%2!=0) {
-		var nine=arr[((arr.length-1)/2)];
-	}
-	else if(arr.length%2==0){
-		var fou=(arr.length/2);
-		var nine=(arr[fou])+parseFloat(arr[(fou-1)])/2;
-	}
-	var q1 = arr[parseInt(0.25*arr.length)];
-	var q3 = arr[parseInt(0.75*arr.length)];
-	var seven=(q3-q1);
-	return "Median: "+nine.toFixed(4)+"</br>" +"Count: "+eight.toFixed(4)+"</Br>"+"Min: "+four.toFixed(4)+"</Br>"+"Max: "+five.toFixed(4)+"</Br>"+"Q1: "+q1.toFixed(4)+"</br>"+"Q3: "+q3.toFixed(4)+"</br>"+"Range: "+six.toFixed(4)+"</Br>"+"IQR: "+seven.toFixed(4)+"</br>"
-}
-function ReturnVal(){
-	if (document.getElementById('mean').value == ""){
-		var output="<b>	ENTER AN ARRAY OF NUMBERS</b>";
-	}
-	else{
-	var output="Mean: "+getMean() +"</br>"+getRange()+"Sample Standard Deviation: "+getSAMPStdev()+"</br>"+"Population Standard Deviation: "+getPOPStdev()+"</br>"+"Sample Variance: "+getSAMPVar()+"</br>"+"Population Variance: "+getPOPVar()+"</br>";
-	}
-	document.getElementById('answer').innerHTML=output;
-}
+//THIS JS CODE BELONGS TO INI-OBONG OBOTTO MAKE USE OF THIS CODE, EMAIL: INIOBONGOBOT@GMAIL.COM
+function getMean(){	var one = document.getElementById('mean').value;	var two = one.split(',');	var three=0;	for (var i = 0; i < two.length; i++) {		three=parseFloat(two[i])+three;	}	var four = three/two.length;	return "The mean is the sum of all of the data values <b style='color:blue'>["+two.slice(0,4)+"...]</b> divided by the size of the data set <b style='color:blue'>["+two.length+"]</b> which would equal: <b style='color:blue'>"+four+"</b></br>"}function getPOPStdev(){	var one = document.getElementById('mean').value;	var two = one.split(',');	var three=0;	for (var i = 0; i < two.length; i++) {		three=parseFloat(two[i])+three;	}	var four = three/two.length;	var five=0;	for (var i = 0; i < two.length; i++) {		five=((parseFloat(two[i])-four)**2)+five;	}	var six = five/two.length;	var seven = Math.sqrt(six);	return "<b style='color:blue'>"+seven.toFixed(4)+"</b>";}
+function getSAMPStdev(){	var one = document.getElementById('mean').value;	var two = one.split(',');	var three=0;	for (var i = 0; i < two.length; i++) {		three=parseFloat(two[i])+three;	}	var four = three/two.length;	var five=0;	for (var i = 0; i < two.length; i++) {		five=((parseFloat(two[i])-four)**2)+five;	}	var six = five/(two.length-1);	var seven = Math.sqrt(six);	return "<b style='color:blue'>"+seven.toFixed(4)+"</b>";}function getPOPVar(){	var one = document.getElementById('mean').value;	var two = one.split(',');	var three=0;	for (var i = 0; i < two.length; i++) {		three=parseFloat(two[i])+three;	}	var four = three/two.length;	var five=0;	for (var i = 0; i < two.length; i++) {		five=((parseFloat(two[i])-four)**2)+five;	}	var six = five/two.length;	return "<b style='color:blue'>"+six.toFixed(4)+"</b>";}
+function getSAMPVar(){	var one = document.getElementById('mean').value;	var two = one.split(',');	var three=0;	for (var i = 0; i < two.length; i++) {		three=parseFloat(two[i])+three;	}	var four = three/two.length;	var five=0;	for (var i = 0; i < two.length; i++) {		five=((parseFloat(two[i])-four)**2)+five;	}	var six = five/(two.length-1);	return "<b style='color:blue'>"+six.toFixed(4)+"</b>";}function getRange(){	var one = document.getElementById('mean').value;	var two = one.split(',');	var arr=[];	for (var i = 0; i < two.length; i++) {		var x=parseFloat(two[i]);		arr.push(x);	}	arr.sort(function (a, b) {  return a - b;  });	var four= arr[0];	var five= arr[arr.length-1];	var six=(five-four);	var eight=arr.length;	if (arr.length%2!=0) {		var nine=arr[((arr.length-1)/2)];	}	else if(arr.length%2==0){		var fou=(arr.length/2);		var nine=((arr[fou])+(arr[(fou-1)]))/2;	}	var q1 = arr[parseInt(0.25*arr.length)];	var q3 = arr[parseInt(0.75*arr.length)];	var seven=(q3-q1);		return "Median: This is the value separating the upper half of the ordered data from the lower half. In this question the median is: <b style='color:blue'>"+nine+"</b></br></br>" +"Count: <b style='color:blue'>"+eight+"</b></Br></br>5 Number Summary</br>Min: <b style='color:blue'>"+four+"</b></Br>Q1: <b style='color:blue'>"+q1+"</b></br>Q2: <b style='color:blue'>"+nine+"</b></br>Q3: <b style='color:blue'>"+q3+"</b></br>Max: <b style='color:blue'>"+five+"</b></br>Range: <b style='color:blue'>"+six+"</b></Br>IQR: <b style='color:blue'>"+seven+"</b></br>Upper Fence: <b style='color:blue'>"+(q3+1.5*seven)+"</b></br>Lower Fence <b style='color:blue'>"+(q1-1.5*seven)+"</b></br>"//THIS JS CODE BELONGS TO INI-OBONG OBOTTO MAKE USE OF THIS CODE, EMAIL: INIOBONGOBOT@GMAIL.COM
+} function ReturnVal(){	var one = document.getElementById('mean').value;	let two = one.split(',');	let three = false;	for (var i =0; i < two.length; i++){		if(two[i]==""){			three= true;		}		if(two[i]>=":"){three=true}	}	if ((document.getElementById('mean').value).length <1){		var output="<b style='color:red'>	ENTER AN ARRAY OF NUMBERS</b>";	}	else if (three == true){var output = "<b style='color:red'>One or more values are missing</b>";}	else{	var output="Mean: "+getMean() +"</br>"+getRange()+"</br>Standard Deviation </br>Standard deviation is a measure of dispersion of data values about the mean. The formula for standard deviation is the square root of the sum of squared differences from the mean divided by the size of the data set.</br>Sample Standard Deviation: "+getSAMPStdev()+"</br>"+"Population Standard Deviation: "+getPOPStdev()+"</br>"+"Sample Variance: "+getSAMPVar()+"</br>"+"Population Variance: "+getPOPVar()+"</br>";	document.getElementById('curve_chart').style.display='block';	}	document.getElementById('answer').innerHTML=output;}
 //MATHSHELP2.HTML STARTS HERE
-function field1(){
-	var one=document.getElementById('xval').value;
-	var two= document.getElementById('mean').value;
-	var three= document.getElementById('stdev').value;
-	var four= document.getElementById('observation').value;
-	if (four == ""){
-	var five=(parseFloat(one)-parseFloat(two))/parseFloat(three);}
-	else if (four != null){
-	var five= (parseFloat(one)-parseFloat(two))/(parseFloat(three)/Math.sqrt(parseFloat(four)));}
-	if (five < -6.5){
-     	var sum= 0.0;
-	}
-   else if (five > 6.5){
-     sum = 1.0;
-   }
-   else{
-   var factK = 1;
-   sum      = 0;
-   var term     = 1;
-   var k        = 0;
-   var loopStop = Math.exp(-23);
-   while (Math.abs(term) > loopStop) {
-     term = 0.3989422804 * Math.pow(-1, k) * Math.pow(five, k) / (2 * k + 1) /
-            Math.pow(2, k) * Math.pow(five, k + 1) / factK;
-     sum += term;
-     k++;
-     factK *= k;
-   }
-
-   sum += 0.5;
-	}
-	if (document.getElementById('xval').value ==""){
-		var output="<b>	ENTER VALUES ABOVE</b>";
-	}else{
-   var output= "Z-Score: "+five.toFixed(4)+"</br>"+"Probabilty of (X&lt;Z): "+sum.toFixed(4)+"</br>"+"probabilty of (X&gt;Z): "+(1-sum).toFixed(4);
- 	}
-	document.getElementById('answer').innerHTML=output;
-}
+function field1(){	var one=document.getElementById('xval').value;	var two= document.getElementById('mean').value;	var three= document.getElementById('stdev').value;	var four= document.getElementById('observation').value;	if (four == ""){	var five=(parseFloat(one)-parseFloat(two))/parseFloat(three);}	else if (four != null){	var five= (parseFloat(one)-parseFloat(two))/(parseFloat(three)/Math.sqrt(parseFloat(four)));}	if (five < -6.5){     	var sum= 0.0;	}   else if (five > 6.5){     sum = 1.0;
+   }   else{   var factK = 1;   sum      = 0;   var term     = 1;   var k        = 0;   var loopStop = Math.exp(-23);   while (Math.abs(term) > loopStop) {     term = 0.3989422804 * Math.pow(-1, k) * Math.pow(five, k) / (2 * k + 1) /            Math.pow(2, k) * Math.pow(five, k + 1) / factK;     sum += term;     k++;     factK *= k;   }   sum += 0.5;	}	if (document.getElementById('xval').value ==""){		var output="<b style='color:red'>	ENTER VALUES ABOVE</b>";	}else{   var output= "Z-Score: "+five.toFixed(4)+"</br>"+"Probabilty of (X&lt;Z): "+sum.toFixed(4)+"</br>"+"probabilty of (X&gt;Z): "+(1-sum).toFixed(4); 	}	document.getElementById('answer').innerHTML=output;}//THIS JS CODE BELONGS TO INI-OBONG OBOTTO MAKE USE OF THIS CODE, EMAIL: INIOBONGOBOT@GMAIL.COM
 
 function field2(){
 	var one=document.getElementById('zscore1').value;
@@ -187,9 +42,10 @@ function field2(){
    		console.log(3);
    		console.log(sum);
    		}
+
    		var output= "Probabilty of (X&lt;Z): "+sum.toFixed(4)+"</br>"+"probabilty of (X&gt;Z): "+(1-sum).toFixed(4)+"</br>";
    		
-   	}
+   	}//THIS JS CODE BELONGS TO INI-OBONG OBOTTO MAKE USE OF THIS CODE, EMAIL: INIOBONGOBOT@GMAIL.COM
 	else if (one ==""){
 		two=parseFloat(two);
 		three=parseFloat(three);
@@ -234,6 +90,9 @@ function field2(){
    		sum2 += 0.5;
    		var output= "Probabilty of Z-Score: "+(sum2-sum).toFixed(4)+"</br>";
  
+	}
+	if (document.getElementById('zscore1').value==""){
+		var output="<b style='color:red'>	ENTER VALUES ABOVE</b>";
 	}
    
 	document.getElementById('answer2').innerHTML=output;
@@ -284,7 +143,9 @@ function field3() {
   }
   if(document.getElementById('Prob').value!=""){
   document.getElementById('answer3').innerHTML="Z-Score: "+ppnd.toFixed(4);
-}else{false;}
+}else{document.getElementById('answer3').innerHTML="<b style='color:red'>Please provide any 2 values above to calculate the rest probabilities of two independent events.</BR>";
+	;}
+	
 }
 
 //MATHSHELP3.HTML
@@ -309,7 +170,7 @@ function field4(){
 				;
 	if (document.getElementById('mean').value!=""){
 	document.getElementById('answer').innerHTML=output;
-}else{false;}
+}else{document.getElementById('answer').innerHTML="<b style='color:red'>MISSING PARAMETER</b>";}
 }
 //MATHSHELP4.HTML
 //V8 3.31.1
@@ -332,7 +193,7 @@ function field5() {
    var output= "Permutations, <sub>n</sub>P<sub>r</sub>: "+five.toFixed(4);
 if (document.getElementById('nnn').value>1){
 	document.getElementById('answer').innerHTML=output;
-}else{false}
+}else{document.getElementById('answer').innerHTML="<b style='color:red'>MISSING PARAMETER</b>";}
 };
 
 function field6() {
@@ -356,7 +217,7 @@ function field6() {
 
 if (document.getElementById('nnnn').value>1){
 	document.getElementById('answer2').innerHTML=output;
-}else{false};
+}else{document.getElementById('answer2').innerHTML="<b style='color:red'>MISSING PARAMETER</b>";};
 };
 
 function field7() {
@@ -388,9 +249,12 @@ function field7() {
         }
     }
     dfs();
-    
+    if (document.getElementById('perm').value==""){
+    	document.getElementById('answer3').innerHTML="<b style='color:red'>MISSING PARAMETER</b>";
+
+    }else{
     document.getElementById('answer3').innerHTML="Permutations, <sub>n</sub>P<sub>r</sub>: "+res.length+"</br> Permutation Array:</br>"+res;
-};
+}};
 
 const ttable={
 	"99.95%":{'1':636.620,'2':31.599,'3':12.924,'4':8.610,'5':6.869,'6':5.959,'7':5.408,'8':5.041,'9':4.781,'10':4.587,'11':4.437,'12': 4.318,'13':4.221,'14':4.140,'15':4.073,'16': 4.015,'17':3.965,'18' :3.922,'19': 3.883,'20':3.850,'21':3.819,'22':3.792,'23':3.768,'24':3.745,'25' :3.725,'26':3.707,'27':3.690,'28':3.674,'29': 3.659,'30':3.646},
@@ -406,8 +270,15 @@ const ttable={
 function field8(){
 	var one=document.getElementById('prob').value;
 	var two=document.getElementById('dg').value;
-	var output= ttable[one][two];
-	document.getElementById('answer').innerHTML=one+"has a probabilty of: "+output.toFixed(4);
+	
+	console.log(two.length);
+	if (two.length<1){
+		var output="<b style='color:red'>MISSING PARAMETER</b>";
+	}
+	else{
+		var output= one+"has a probabilty of: "+ttable[one][two];
+	};
+	document.getElementById('answer').innerHTML=output;
 }
 function field9(){
 	var one=document.getElementById('xvalue').value;
@@ -415,7 +286,7 @@ function field9(){
 	for(var key in ttable) {
     if(ttable[key][two] == one) {
         var output=key;
-        console.log(key);
+        
         document.getElementById('answer2').innerHTML=one+" has a Percentage of: "+key;
     }
 }
@@ -461,8 +332,6 @@ function field11(){
 	}
 	var ystdev2 = Math.sqrt(ystdev/(n-1)),
 	xstdev2 = Math.sqrt(xstdev/(n-1));
-	
-	console.log(ystdev);
 	var a=(((yaxissum * xsquaresum) - (xaxissum * yxaxissum)) / ((n*(xsquaresum)) - (xaxissum**2)));
 	var b=((n*(yxaxissum)) - (xaxissum * yaxissum)) / ((n*(xsquaresum)) - (xaxissum**2));
 	var r=((n*yxaxissum)-(yaxissum * xaxissum))/Math.sqrt(((n*xsquaresum)-((xaxissum)**2))*((n*ysquaresum)-((yaxissum)**2)));
@@ -495,9 +364,13 @@ function field11(){
 	"<table><tr><th>Variable</th><th>Coefficient</th><th>Standard Error</th><th>T Stat</th><th>Lower Limit</th><th>Upper Limit</th></tr></br>"+
 	"<tr><td>Intercept</td><td>"+a.toFixed(4)+"</td><td>"+asterr.toFixed(4)+"</td><td>"+atstat.toFixed(4)+"</td><td>"+al.toFixed(4)+"</td><td>"+au.toFixed(4)+"</td></br>"+
 	"<tr><td>"+xname+"</td><td>"+b.toFixed(4)+"</td><td>"+bsterr.toFixed(4)+"</td><td>"+btstat.toFixed(4)+"</td><td>"+bl.toFixed(4)+"</td><td>"+bu.toFixed(4)+"</td></table></br>";
-	if (document.getElementById('Yaxis').value!=""){
+	if(yaxis.length!==xaxis.length){
+	document.getElementById('answer').innerHTML="<b style='color:red'>X and Y axis must be of equal length<b>";
+}else if (document.getElementById('Yaxis').value!=""){
 	document.getElementById('answer').innerHTML=output;
-}else{false};
+	document.getElementById('curve_chart').style.display='block';
+}
+else{document.getElementById('answer').innerHTML="<b style='color:red'>MISSING PARAMETER<b>"};
 	console.log(ssxx,ssxy,ssyy,sse,s);
 }
 
@@ -550,6 +423,7 @@ function Prob2(){
 		var PnotAuBOccur = 1-PAuBbothOccur;
 		var PAoccurBnotOccur = ProbA*(1-ProbB);
 		var PBoccurAnotOccur = ProbB*(1-ProbA);
+		five=PAnBbothOccur;
 	var output = 
 	"P(A): = "+ProbA+
 	"</br>P(B): = "+ProbB+
@@ -759,3 +633,312 @@ console.log(output);
 document.getElementById('answer3').innerHTML=output;
 }
 
+function Trigonometry(){
+	let sideA= document.getElementById('sideA').value;
+	let sideB= document.getElementById('sideB').value;
+	let sideC= document.getElementById('sideC').value;
+	let angleA= document.getElementById('angleA').value;
+	let angleB= document.getElementById('angleB').value;
+	if (angleB == ""){
+		angleB = 90-parseFloat(angleA)
+	}
+	else if (angleA == ""){
+		angleA = 90-parseFloat(angleB);
+	}
+	else if (sideA>0 && sideB>0){
+		angleA = RadiansToDegrees(Math.atan (sideA/sideB))
+		angleB = RadiansToDegrees(Math.atan (sideB/sideA))
+	}
+	console.log(sideB)
+	SolveForAngles(sideA,sideB,sideC,angleA,angleB);		
+	SolveForSides(sideA,sideB,sideC,angleA,angleB);
+	if (angleA!="" && angleB!=""){
+		var sum = parseFloat(angleA) + parseFloat(angleB)
+		if (sum != 90){
+			alert ("You input two angles that do not add up to 90 degrees. Please input only one angle or two angles that add up to 90 degrees")
+			return false
+		}
+	if (sideA>0 && sideB>0 && sideC>0){
+		sideA=parseFloat(sideA)
+		sideB=parseFloat(sideB)
+		sideC=parseFloat(sideC)
+		if (sideC != Math.sqrt(Math.pow(sideA,2)+Math.pow(sideB,2))){
+			alert("You input three sides, but they do not make a right triangle")
+			return false
+		}
+	}
+	
+return true
+}
+function RadiansToDegrees(valRad){
+	return (360/(2*Math.PI)*valRad)
+}
+function DegreesToRadians(valDeg){
+	return ((2*Math.PI)/360*valDeg)
+}
+function SolveForAngles (sideA,sideB,sideC,angleA,angleB){
+	
+	if (sideA>0 && sideC>0){
+			angleA = RadiansToDegrees(Math.asin (sideA/sideC))
+			angleB = RadiansToDegrees(Math.acos (sideA/sideC))
+	}
+	else if (sideB>0 && sideC>0){
+			angleA = RadiansToDegrees(Math.acos (sideB/sideC))
+			angleB = RadiansToDegrees(Math.asin (sideB/sideC))
+	}
+	if (angleA>0 && angleB>0){
+		angleA=angleA
+		angleB=angleB
+		return true
+	}
+	else {
+		alert ("Not enough information, you must input at least 1 side and an angle or 2 sides")
+		return false
+	}	
+}
+	
+function SolveForSides (sideA,sideB,sideC,angleA,angleB)	{
+	if (sideA>0){
+		sideB = sideA / Math.tan(DegreesToRadians(angleA))
+		sideC = sideA / Math.sin(DegreesToRadians(angleA))
+	}
+	else if (sideB>0){
+		sideA = sideB / Math.tan(DegreesToRadians(angleB))
+		sideC = sideB / Math.sin(DegreesToRadians(angleB))
+	}
+	
+	else if (sideC>0){
+		sideA = sideC * Math.sin(DegreesToRadians(angleA))
+		sideB = sideC * Math.cos(DegreesToRadians(angleA))
+	}
+	if (sideA>0 && sideB>0 && sideC>0){
+		sideA=sideA;
+		sideB=sideB;
+		sideC=sideC;
+	}
+	else {
+		alert ("Not enough information, you must input at least 1 side and an angle or 2 sides")
+	}	
+console.log(sideC,angleA,sideB,angleB, sideA);
+document.getElementById('sideA').value=parseFloat(sideA).toFixed(2);
+document.getElementById('sideB').value=parseFloat(sideB).toFixed(2);
+document.getElementById('sideC').value=parseFloat(sideC).toFixed(2);
+document.getElementById('angleB').value=parseFloat(angleB);
+document.getElementById('angleA').value=parseFloat(angleA);	
+}}
+
+function TrigFuncCalc(){
+	let DegRad = document.getElementById('DegRad').value;
+	let sincostan = document.getElementById('sincostan').value;
+	let triginput = parseFloat(document.getElementById('triginput').value);
+	if (DegRad=='Radians'){
+		triginput=((Math.PI/180)*triginput);
+	}
+	if (sincostan=='sin'){
+		document.getElementById('trigoutput').value=Math.sin(triginput);
+	}
+	else if (sincostan=='cos'){
+		document.getElementById('trigoutput').value=Math.cos(triginput);
+	}
+	else if (sincostan=='tan'){
+		document.getElementById('trigoutput').value=Math.tan(triginput);
+	}
+
+}
+
+function pythagorean(){
+	let legA = document.getElementById('legA').value;
+	let legB = document.getElementById('legB').value;
+	let legC = document.getElementById('legC').value;
+	if (legA!=""&&legB!=""){
+		document.getElementById('legC').value=Math.sqrt(parseFloat(legA)**2+parseFloat(legB)**2);
+	}
+	else if (legA!=""&&legC!=""){
+		document.getElementById('legB').value=Math.sqrt(parseFloat(legC)**2-parseFloat(legA)**2);
+	}
+	else if (legB!=""&&legC!=""){
+		document.getElementById('legA').value=Math.sqrt(parseFloat(legC)**2-parseFloat(legB)**2);
+	}
+}
+
+function quadratic(){
+	let Alpha = document.getElementById('Alpha').value;
+	let Beta = document.getElementById('Beta').value;
+	let Charlie = document.getElementById('Charlie').value;
+	let output =false;
+	if (Alpha == "" || Beta == "" || Charlie ==""){
+		output="<b style='color:red'>Please provide the 3 parameters above to calculate the Quadratic Equation.</BR>";
+	}
+	else{
+		Alpha = parseFloat(Alpha);
+		Beta = parseFloat(Beta);
+		Charlie=parseFloat(Charlie);
+		let left= ((-Beta)-Math.sqrt(Beta**2-(4*Alpha*Charlie)))/(2*Alpha);
+		let right= ((-Beta)+Math.sqrt(Beta**2-(4*Alpha*Charlie)))/(2*Alpha);
+		if (isNaN(left) || isNaN(right)){
+		output=
+		Alpha+"x<sup>2</sup> + "+Beta+"x + "+Charlie+" =0</br>"+
+		"Discriminant= "+(Beta**2-(4*Alpha*Charlie))+"</br>"+
+		"x= (-("+Beta+")&#177 &#8730 "+(Beta**2-(4*Alpha*Charlie))+")/"+(2*Alpha);
+		}
+		else {
+		output=
+		Alpha+"x<sup>2</sup> + "+Beta+"x + "+Charlie+" =0</br>"+
+		"Discriminant= "+(Beta**2-(4*Alpha*Charlie))+"</br>"+
+		"x= (-("+Beta+")&#177 "+"&#8730 "+(Beta**2-(4*Alpha*Charlie))+")/"+(2*Alpha)+"</br>"+
+		"x= ("+left+' , '+right+")";}
+	}
+	document.getElementById('answer').innerHTML=output;
+}
+
+function GrpFreq(){
+	let one = document.getElementById('range').value;
+	let two = document.getElementById('freq').value;
+	one = one.split(',');
+	two = two.split(',');
+	var mid,three,sumf=0, summ=0, sumfm2=0, sumfm=0 ;
+	let grofreq = "<table><tr><th>Range</th><th><em>F</em></th><th><em>X</em></th><th><em>FX</em></th><th><em>FX<sup>2</sup></em></th></tr>";
+	var range =[], midarr=[];
+	for (var i=0; i<one.length; i++){
+		three=one[i].split('-');
+		range.push(three);
+		mid = (parseFloat(range[i][1])+parseFloat(range[i][0]))/2;
+		midarr[i]=mid;
+		var m2 = mid**2;
+		var fm2 = m2*parseFloat(two[i]);
+		sumf+=parseFloat(two[i]);
+		summ+=mid;
+		sumfm2+=fm2;
+		sumfm+=(parseFloat(two[i])*mid);
+	}
+	for (var i=0; i<one.length; i++){
+		grofreq+="<tr><td>"+one[i]+"</td><td>"+two[i]+"</td><td>"+midarr[i]+"</td><td>"+(two[i]*midarr[i])+"</td><td>"+((two[i]*midarr[i])**2)+"</td></tr>";
+	};
+	grofreq+="<tr><td><b>TOTAL</b></td><td><b>"+sumf+"</b></td><td><b>"+summ+"</b></td><td><b>"+sumfm+"</b></td><td><b>"+sumfm2+"</b></td></tr>";
+	grofreq+="</br></table>";	
+	let mean = sumfm/sumf;
+	let sstdev=Math.sqrt((sumfm2-(sumf*mean**2))/(sumf-1));
+	let pstdev=Math.sqrt((sumfm2-(sumf*mean**2))/sumf);
+	let svar=((sumfm2-(sumf*mean**2))/(sumf-1));
+	let pvar =((sumfm2-(sumf*mean**2))/sumf);
+	let output=false;
+	if (one.length <2 || two.length<2){
+		output="<b style='color:red'>Please provide the RANGE and FREQUENCY above to Get the Values.</BR>";
+	}
+	else if (document.getElementById('range').value.includes("-")==false){
+		output="<b style='color:red'>Please seperate each side of the RANGE with a (-) HYPHEN</BR>";
+	}
+	else if (one.length!=two.length){
+		output="<b style='color:red'>Please ensure that both the RANGE and FREQUENCY have the same NUMBER OF OBSERVATION.</BR>";	
+	}
+	else{
+		output="Mean: "+mean+
+		"</br>Sample Standard Deviation: "+sstdev+
+		"</br>Population Standard Deviation: "+pstdev+
+		"</br>Sample Variance: "+svar+
+		"</br>Population Variance: "+pvar+grofreq;
+}
+	document.getElementById('answer1').innerHTML=output;
+}
+
+function chisq(){
+	let r1c1= document.getElementById('r1c1').value;	let r1c2= document.getElementById('r1c2').value;	let r1c3= document.getElementById('r1c3').value;	let r1c4= document.getElementById('r1c4').value;	let r1c5= document.getElementById('r1c5').value;
+	let r2c1= document.getElementById('r2c1').value;	let r2c2= document.getElementById('r2c2').value;	let r2c3= document.getElementById('r2c3').value;	let r2c4= document.getElementById('r2c4').value;	let r2c5= document.getElementById('r2c5').value;
+	let r3c1= document.getElementById('r3c1').value;	let r3c2= document.getElementById('r3c2').value;	let r3c3= document.getElementById('r3c3').value;	let r3c4= document.getElementById('r3c4').value;	let r3c5= document.getElementById('r3c5').value;
+	let r4c1= document.getElementById('r4c1').value;	let r4c2= document.getElementById('r4c2').value;	let r4c3= document.getElementById('r4c3').value;	let r4c4= document.getElementById('r4c4').value;	let r4c5= document.getElementById('r4c5').value;
+	let r5c1= document.getElementById('r5c1').value;	let r5c2= document.getElementById('r5c2').value;	let r5c3= document.getElementById('r5c3').value;	let r5c4= document.getElementById('r5c4').value;	let r5c5= document.getElementById('r5c5').value;
+	if (r1c1 == ""){r1c1 = 0}else{r1c1=parseFloat(r1c1)};	if (r1c2 == ""){r1c2 = 0}else{r1c2=parseFloat(r1c2)};	if (r1c3 == ""||r1c3 == " "){r1c3 = 0}else{r1c3=parseFloat(r1c3)};	if (r1c4 == ""){r1c4 = 0}else{r1c4=parseFloat(r1c4)};	if (r1c5 == ""){r1c5 = 0}else{r1c5=parseFloat(r1c5)};
+	if (r2c1 == ""){r2c1 = 0}else{r2c1=parseFloat(r2c1)};	if (r2c2 == ""){r2c2 = 0}else{r2c2=parseFloat(r2c2)};	if (r2c3 == ""||r2c3 == " "){r2c3 = 0}else{r2c3=parseFloat(r2c3)};	if (r2c4 == ""){r2c4 = 0}else{r2c4=parseFloat(r2c4)};	if (r2c5 == ""){r2c5 = 0}else{r2c5=parseFloat(r2c5)};
+	if (r3c1 == ""||r3c1 == " "){r3c1 = 0}else{r3c1=parseFloat(r3c1)};	if (r3c2 == ""||r3c2 == " "){r3c2 = 0}else{r3c2=parseFloat(r3c2)};	if (r3c3 == ""||r3c3 == " "){r3c3 = 0}else{r3c3=parseFloat(r3c3)};	if (r3c4 == ""){r3c4 = 0}else{r3c4=parseFloat(r3c4)};	if (r3c5 == ""){r3c5 = 0}else{r3c5=parseFloat(r3c5)};
+	if (r4c1 == ""){r4c1 = 0}else{r4c1=parseFloat(r4c1)};	if (r4c2 == ""){r4c2 = 0}else{r4c2=parseFloat(r4c2)};	if (r4c3 == ""){r4c3 = 0}else{r4c3=parseFloat(r4c3)};	if (r4c4 == ""){r4c4 = 0}else{r4c4=parseFloat(r4c4)};	if (r4c5 == ""){r4c5 = 0}else{r4c5=parseFloat(r4c5)};
+	if (r5c1 == ""){r5c1 = 0}else{r5c1=parseFloat(r5c1)};	if (r5c2 == ""){r5c2 = 0}else{r5c2=parseFloat(r5c2)};	if (r5c3 == ""){r5c3 = 0}else{r5c3=parseFloat(r5c3)};	if (r5c4 == ""){r5c4 = 0}else{r5c4=parseFloat(r5c4)};	if (r5c5 == ""){r5c5 = 0}else{r5c5=parseFloat(r5c5)};
+	let row1sum = r1c1+r1c2+r1c3+r1c4+r1c5;	let row2sum = r2c1+r2c2+r2c3+r2c4+r2c5;	let row3sum = r3c1+r3c2+r3c3+r3c4+r3c5;	let row4sum = r4c1+r4c2+r4c3+r4c4+r4c5;	let row5sum = r5c1+r5c2+r5c3+r5c4+r5c5;
+	let col1sum = r1c1+r2c1+r3c1+r4c1+r5c1;	let col2sum = r1c2+r2c2+r3c2+r4c2+r5c2;	let col3sum = r1c3+r2c3+r3c3+r4c3+r5c3;	let col4sum = r1c4+r2c4+r3c4+r4c4+r5c4;	let col5sum = r1c5+r2c5+r3c5+r4c5+r5c5;
+	let finalsum = row1sum+row2sum+row3sum+row4sum+row5sum;
+	let r1c1e=(row1sum*col1sum)/finalsum; let r2c1e=(row2sum*col1sum)/finalsum; let r3c1e=(row3sum*col1sum)/finalsum; let r4c1e=(row4sum*col1sum)/finalsum; let r5c1e=(row5sum*col1sum)/finalsum;
+	let r1c2e=(row1sum*col2sum)/finalsum; let r2c2e=(row2sum*col2sum)/finalsum; let r3c2e=(row3sum*col2sum)/finalsum; let r4c2e=(row4sum*col2sum)/finalsum; let r5c2e=(row5sum*col2sum)/finalsum;
+	let r1c3e=(row1sum*col3sum)/finalsum; let r2c3e=(row2sum*col3sum)/finalsum; let r3c3e=(row3sum*col3sum)/finalsum; let r4c3e=(row4sum*col3sum)/finalsum; let r5c3e=(row5sum*col3sum)/finalsum;
+	let r1c4e=(row1sum*col4sum)/finalsum; let r2c4e=(row2sum*col4sum)/finalsum; let r3c4e=(row3sum*col4sum)/finalsum; let r4c4e=(row4sum*col4sum)/finalsum; let r5c4e=(row5sum*col4sum)/finalsum;
+	let r1c5e=(row1sum*col5sum)/finalsum; let r2c5e=(row2sum*col5sum)/finalsum; let r3c5e=(row3sum*col5sum)/finalsum; let r4c5e=(row4sum*col5sum)/finalsum; let r5c5e=(row5sum*col5sum)/finalsum;
+	let actual = [r1c1,r1c2,r1c3,r1c4,r1c5,r2c1,r2c2,r2c3,r2c4,r2c5,r3c1,r3c2,r3c3,r3c4,r3c5,r4c1,r4c2,r4c3,r4c4,r4c5,r5c1,r5c2,r5c3,r5c4,r5c5];
+	var expected= [r1c1e,r1c2e,r1c3e,r1c4e,r1c5e,r2c1e,r2c2e,r2c3e,r2c4e,r2c5e,r3c1e,r3c2e,r3c3e,r3c4e,r3c5e,r4c1e,r4c2e,r4c3e,r4c4e,r4c5e,r5c1e,r5c2e,r5c3e,r5c4e,r5c5e];
+	finalsum=0
+	for (var i=0; i<actual.length;i++){
+		if (actual[i]!=0){
+		finalsum+=((actual[i]-expected[i])**2)/expected[i];
+	}
+		if (expected[i]==0){expected[i]=""}else{expected[i]=expected[i].toFixed(2)}
+	};
+	var countr=0;
+	var row=[r1c1,r2c1,r3c1,r4c1,r5c1];
+	for (var i=0;i<row.length;i++ ){
+		if (row[i]!=0){
+			countr+=1;
+		}
+	}
+	var countc=0;
+	var col=[r1c2,r1c2,r1c3,r1c4,r1c4];
+	for (var i=0;i<col.length;i++ ){
+		if (col[i]!=0){
+			countc+=1;
+		}
+	}
+	var dfchisq = (countr-1)*(countc-1);
+	let output="Chi-Square (x<sup>2</sup>) is " +finalsum.toFixed(4) +"</br>Degree of Freedom (df) is "+dfchisq+
+	"</br></br><table><caption>Expected</caption><tr><th></th><th>Col1</th><th>Col2</th><th>Col3</th><th>Col4</th><th>Col5</th></tr>"+
+	'<tr><th>Row1</th><td>'+expected[0]+'</td><td>'+expected[1]+'</td><td>'+expected[2]+'</td><td>'+expected[3]+'</td><td>'+expected[4]+'</td></tr>'+
+	'<tr><th>Row2</th><td>'+expected[5]+'</td><td>'+expected[6]+'</td><td>'+expected[7]+'</td><td>'+expected[8]+'</td><td>'+expected[9]+'</td></tr>'+
+	'<tr><th>Row3</th><td>'+expected[10]+'</td><td>'+expected[11]+'</td><td>'+expected[12]+'</td><td>'+expected[13]+'</td><td>'+expected[14]+'</td></tr>'+
+	'<tr><th>Row4</th><td>'+expected[15]+'</td><td>'+expected[16]+'</td><td>'+expected[17]+'</td><td>'+expected[18]+'</td><td>'+expected[19]+'</td></tr>'+
+	'<tr><th>Row5</th><td>'+expected[20]+'</td><td>'+expected[21]+'</td><td>'+expected[22]+'</td><td>'+expected[23]+'</td><td>'+expected[24]+'</td></tr>'+
+	'</table>';
+	document.getElementById('answer').innerHTML = output;
+}
+
+function reset(){
+	document.getElementById('mean').value="";
+	document.getElementById('curve_chart').innerHTML="";
+	document.getElementById('answer').innerHTML="";
+	document.getElementById('answer1').innerHTML="";
+	document.getElementById('answer2').innerHTML="";
+	document.getElementById('answer3').innerHTML="";
+	document.getElementById('answer4').innerHTML="";
+	document.getElementById('xval').value="";
+	document.getElementById('stdev').value="";
+	document.getElementById('observation').value="";
+	document.getElementById('zscore1').value="";
+	document.getElementById('zscore2').value="";
+	document.getElementById('zscore3').value="";
+	document.getElementById('Prob').value="";
+
+}
+
+function binom(){
+	var one = parseFloat(document.getElementsByClassName('binom')[0].value);
+	var two = parseFloat(document.getElementsByClassName('binom')[1].value);
+	var three = parseFloat(document.getElementsByClassName('binom')[2].value);
+	function binomcal(x){
+		var a= 1;
+		for (var i=x; i>0; i--){
+			a *= i
+
+		}
+		return a;
+	}
+	var four = one - two;
+	var onex = binomcal(one);
+	var twox = binomcal(two);
+	var fourx = binomcal(four);
+	var binomP = (onex/(twox*fourx))*(three**two)*((1-three)**four);
+	var mean = one * three;
+	var varian = one *three*(1-three);
+	var stdev = Math.sqrt(varian);
+	if (document.getElementsByClassName('binom')[0].value == "" || document.getElementsByClassName('binom')[1].value == ""){
+		var output="<b style='color:red'>Please provide the N,x and Probabilty above to Get the Values.</BR>";
+	}else{
+		var output = "Binomial probability: P(X = x) "+ binomP.toFixed(7)+"</br>Mean: &mu; = N&pi; = " + mean +
+						"</br>Varaince: &sigma;<sup>2</sup> = N&pi;(1-	&pi;) = "+varian+
+						"</br>Standard Deviation: &sigma; = "+stdev.toFixed(4);
+	}
+	document.getElementById('answer').innerHTML= output;
+}
